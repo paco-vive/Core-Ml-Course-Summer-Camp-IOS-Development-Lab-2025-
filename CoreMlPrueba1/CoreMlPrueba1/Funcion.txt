@@ -1,0 +1,47 @@
+
+    private func analyzeImage() {
+           guard let image = selectedImage else {
+               recognizedText = "No se pudo cargar la imagen"
+               return
+           }
+
+           // Convertir la UIImage a un CVPixelBuffer con el tamaño correcto para MobileNetV2 (224x224).
+           guard let pixelBuffer = image.toCVPixelBuffer(size: CGSize(width: 224, height: 224)) else {
+               recognizedText = "❌ No se pudo convertir a CVPixelBuffer"
+               return
+           }
+
+           do {
+               // 4. Cargar el modelo MobileNetV2.
+               let config = MLModelConfiguration()
+               let model = try MobileNetV2(configuration: config)
+
+               let input = MobileNetV2Input(image: pixelBuffer)
+               let output = try model.prediction(input: input)
+
+               // Obtiene el resultado principal (la etiqueta con mayor probabilidad).
+               let topResult = output.classLabel
+               
+               // Accede a todas las probabilidades para cada clase.
+               let allProbs = output.classLabelProbs
+               
+               //  Filtrar y ordenar las 4 probabilidades más altas.
+               let top4Results = allProbs.sorted { $0.value > $1.value }.prefix(4)
+               
+               // Formatea el texto para mostrarlo en la UI.
+               var resultsText = "Resultado Principal: \(topResult)\n\n"
+               resultsText += "Top 4 Predicciones:\n"
+               
+               for (index, (label, prob)) in top4Results.enumerated() {
+                   // Formatea la probabilidad como un porcentaje.
+                   let percentage = String(format: "%.2f%%", prob * 100)
+                   resultsText += "\(index + 1). \(label) (\(percentage))\n"
+               }
+               
+               self.recognizedText = resultsText
+
+           } catch {
+               self.recognizedText = "❌ Error al predecir: \(error.localizedDescription)"
+           }
+       }
+   }
