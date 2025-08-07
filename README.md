@@ -45,6 +45,8 @@ https://www.canva.com/design/DAGvP01UWjo/nqeJ0qJbr8DRHyXs-ocf7A/edit?utm_content
 
 https://developer.apple.com/machine-learning/models/ 
 
+https://github.com/AfrazCodes/CoreMLDemo-YT/blob/main/CoreMLDemo/GoogLeNetPlaces.mlmodel
+
 
 
 
