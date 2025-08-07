@@ -41,4 +41,10 @@ This project is intended for educational purposes only, as part of the **Summer 
 
 https://drive.google.com/drive/folders/1GAe0xwGxGhdW5j2FionaUPf_PlYsr-Ao 
 
+https://www.canva.com/design/DAGvP01UWjo/nqeJ0qJbr8DRHyXs-ocf7A/edit?utm_content=DAGvP01UWjo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
+
+https://developer.apple.com/machine-learning/models/ 
+
+
+
 
