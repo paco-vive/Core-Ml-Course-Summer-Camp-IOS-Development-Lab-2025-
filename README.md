@@ -47,6 +47,8 @@ https://developer.apple.com/machine-learning/models/
 
 https://github.com/AfrazCodes/CoreMLDemo-YT/blob/main/CoreMLDemo/GoogLeNetPlaces.mlmodel
 
+https://github.com/twostraws/HackingWithSwift/blob/main/SwiftUI/project4-files/BetterRest.csv 
+
 
 
 
